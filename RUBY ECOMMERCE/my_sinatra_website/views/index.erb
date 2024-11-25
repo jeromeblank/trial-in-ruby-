@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple E-Commerce</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Welcome to My Shop</h1>
+    <h2>Products</h2>
+    <ul>
+        <% products.each do |product| %>
+            <li>
+                <strong><%= product[:name] %></strong> - $<%= product[:price] %>
+                <form action="/cart/add/<%= product[:id] %>" method="post" style="display:inline;">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </li>
+        <% end %>
+    </ul>
+    <a href="/cart">View Cart</a>
+</body>
+</html>

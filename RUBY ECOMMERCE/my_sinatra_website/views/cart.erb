@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        <% cart.each do |item| %>
+            <li><%= item[:name] %> - $<%= item[:price] %></li>
+        <% end %>
+    </ul>
+    <p><strong>Total Items:</strong> <%= cart.size %></p>
+    <a href="/checkout">Checkout</a>
+    <a href="/">Continue Shopping</a>
+</body>
+</html>
